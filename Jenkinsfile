@@ -19,7 +19,7 @@ pipeline {
     stages {
         stage('Checkout Git repository') {
             steps {
-                git branch: 'main', credentialsId: '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', url: 'https://github.com/SalmaMj/Devops-automation'
+                git branch: 'main', credentialsId: 'github_private', url: 'https://github.com/SalmaMj/Devops-automation'
             }
         }
 

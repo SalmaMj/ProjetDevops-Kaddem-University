@@ -16,13 +16,14 @@ pipeline {
         NEXUS_CREDENTIALS_ID = 'nexus_credentials'
     }
 
-    stages {
-        stage('Checkout Git repository') {
-            steps {
-                git  credentialsId: 'github_pat', url: 'https://github.com/SalmaMj/Devops-automation'
-            }
+   stages {
+    stage('Checkout Git repository') {
+        steps {
+            git credentialsId: 'github_pat', 
+                url: 'https://github.com/SalmaMj/Devops-automation', 
+                branch: 'main'
         }
-
+    }
         stage('Maven Build') {
             steps {
                 sh 'mvn clean package'

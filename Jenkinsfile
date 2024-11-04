@@ -22,7 +22,7 @@ pipeline {
     stages {
         stage('Checkout Git repository') {
             steps {
-                git branch: 'main', url: 'https://github.com/SalmaMj/Devops-automation.git'
+                git branch: 'main', url: 'https://github.com/SalmaMj/ProjetDevops-University.git'
             }
         }
 

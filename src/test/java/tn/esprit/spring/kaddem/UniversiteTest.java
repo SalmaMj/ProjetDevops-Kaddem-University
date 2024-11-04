@@ -1,34 +1,29 @@
 package tn.esprit.spring.kaddem;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import tn.esprit.spring.kaddem.entities.Departement;
 import tn.esprit.spring.kaddem.entities.Universite;
 
 import java.util.HashSet;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
-public class UniversiteTest {
-
+class UniversiteTest {
     private Universite universite;
 
-    @Before
-    public void setUp() {
-        universite = new Universite();
+    @BeforeEach
+    void setUp() {
+        universite = new Universite("Test University");
     }
 
     @Test
-    public void testGettersAndSetters() {
+    void testGettersAndSetters() {
+        universite.setNomUniv("New University");
+        assertEquals("New University", universite.getNomUniv());
 
-        String nom = "University of Test";
-        universite.setNomUniv(nom);
-        assertEquals(nom, universite.getNomUniv());
-
-
-        Integer id = 1;
-        universite.setIdUniv(id);
-        assertEquals(id, universite.getIdUniv());
+        universite.setIdUniv(1);
+        assertEquals(1, universite.getIdUniv());
 
         HashSet<Departement> departements = new HashSet<>();
         universite.setDepartements(departements);
@@ -36,12 +31,22 @@ public class UniversiteTest {
     }
 
     @Test
-    public void testConstructors() {
-        Universite universiteWithName = new Universite("Test University");
-        assertEquals("Test University", universiteWithName.getNomUniv());
+    void testConstructorWithParameters() {
+        Universite universiteWithId = new Universite(1, "University with ID");
 
-        Universite universiteWithIdAndName = new Universite(1, "Test University");
-        assertEquals(Integer.valueOf(1), universiteWithIdAndName.getIdUniv());
-        assertEquals("Test University", universiteWithIdAndName.getNomUniv());
+        assertEquals(1, universiteWithId.getIdUniv());
+        assertEquals("University with ID", universiteWithId.getNomUniv());
     }
+
+    @Test
+    void testAddDepartement() {
+        Departement departement = new Departement();
+        HashSet<Departement> departements = new HashSet<>();
+        departements.add(departement);
+        universite.setDepartements(departements);
+
+        assertEquals(1, universite.getDepartements().size());
+        assertTrue(universite.getDepartements().contains(departement));
+    }
+
 }

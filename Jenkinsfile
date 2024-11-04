@@ -22,7 +22,7 @@ pipeline {
     stages {
         stage('Checkout Git repository') {
             steps {
-                git branch: 'SalmaMEJRI-5ARCTIC4-G3', url: 'https://github.com/MDJ-GitHub/5ArcTIC4-G3-Kaddem.git'
+                git branch: 'main', url: 'https://github.com/SalmaMj/Devops-automation.git'
             }
         }
 

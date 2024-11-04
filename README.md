@@ -18,7 +18,7 @@ Welcome to the *Kaddem* DevOps project repository! This project is part of the f
 
 ## 📘 About the Project
 
-The *Kaddem* project implements a DevOps pipeline for a Spring Boot application, covering areas such as automated testing, containerization, and deployment. This project represents our approach to building robust CI/CD pipelines with monitoring and management solutions.
+The *Kaddem* project implements a DevOps pipeline for a Spring Boot and Angular application, covering areas such as automated testing, containerization, and deployment. This project represents our approach to building robust CI/CD pipelines with integrated monitoring and management solutions.
 
 ## 🛠 Technologies Used
 

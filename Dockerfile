@@ -1,4 +1,5 @@
 # FROM_Nexus
+
 FROM openjdk:17-jdk-alpine
 ARG NEXUS_URL
 ARG GROUP_ID
